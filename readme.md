@@ -45,19 +45,27 @@ user: UserHandler.kt, ProfileHandler.kt, UserRepository.kt, User.kt
 
 ### specify all internal calls like this :
 
-    attendance-service --> course-service:
-	    where: monolith/courses/models.py, class: Course
-	    happened: monolith/attendance/views.py, class: AttendanceView
-	    code: Courses.objects.get(id=course_id)
-	    reason: imported and used
+    userService --> ArticleService:
+	    where: io/realworld/service/UserService.kt, class: UserService
+	    happened: io/realworld/service/ArticleService.kt, class: ArticleService
+	    code: getUsersArticles(userId):List<Article> 
+	    reason: get users article from article service
 	    solution: GRPC 
 
-    course-service --> user-management-service:
-        where: monolith/users/models.py, class: User
-        happened: monolith/courses/views.py, class: CourseView
-        code: Users.objects.get(id=student_id)
-        reason: must obtain user from database
-        solution: trust user_id from jwt token
+    userService --> CommentService:
+      	 where: io/realworld/service/UserService.kt, class: UserService
+	happened: io/realworld/service/CommentService.kt, class: CommentService
+        code: val claims = Jwts.parser().setSigningKey(jwtSecret)
+        reason: check validity of user token befor commenting
+        solution: using jwt 
+
+    ArticleService --> CommentService:
+      	 where: io/realworld/service/ArticleService.kt, class: ArticleService
+	happened: io/realworld/service/CommentService.kt, class: CommentService
+        code: getCommentsOf(articleId):List<Comment>
+        reason: get Comments of specific article via comment service
+        solution: using GPRC
+	
 	
 ### list of frameworks used
 
