@@ -94,6 +94,6 @@ user: UserHandler.kt, ProfileHandler.kt, UserRepository.kt, User.kt
  
 
 ### team plan for developing each service
-## UserService -> @sadeghAbedi
-## CommentService -> @soroush.baghernezhad
-## ArticleService -> @Alireza.dehghan
+#### UserService -> @sadeghAbedi
+#### CommentService -> @soroush.baghernezhad
+#### ArticleService -> @Alireza.dehghan
