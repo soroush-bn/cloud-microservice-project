@@ -1,23 +1,29 @@
 # App description
 
-describe wtf this app does.
-provide link of the monilith repo
-
-
- 
+blog application which provides api to sign up and login for users.
+users can create articles, add comments to articles. 
 
 # Monolith to micro-service 
 
 ### list of micro services which are going to be implemented
 
 1- user management (jwt)
-2-
-3-
-4-
+2- article
+3- user
+4- comment
 
 ### reasons why each micro service is chosen 
 
+article: as articles are more likely to be developed in future -> scalibility requirement
+comment: as there might be a lot of comment being posted by users and there we be a lot of load on this service
+user: for security requirements 
+
 ### write the files which are going to be used by each micro service
+
+article: ArticleHandler.kt, ArticleRepository.kt, Article.kt, TagHandler.kt, TagRepository.kt
+comment: CommentRepository.kt, Comment.kt
+user: UserHandler.kt, ProfileHandler.kt, UserRepository.kt, User.kt
+
 
 ### diagram of entities and their relations and dependencies to other services as the data bases are apart
 
