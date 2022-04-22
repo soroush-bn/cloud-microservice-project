@@ -68,6 +68,14 @@ user: UserHandler.kt, ProfileHandler.kt, UserRepository.kt, User.kt
 	
 	
 ### list of frameworks used
+-kotlin
+-springframework
+-jbcrypt
+-jsonwebtoken
+-h2
+-feign-gson
+-slugify
+-junit
 
 ### data base schema and each entity info
 
