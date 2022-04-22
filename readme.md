@@ -1,60 +1,52 @@
-# ![RealWorld Example App using Kotlin and Spring](kotlin-spring.png)
+# App description
 
-> ### Kotlin + Spring codebase containing real world examples (CRUD, auth, advanced patterns, etc) that adheres to the [RealWorld](https://github.com/gothinkster/realworld-example-apps) spec and API.
+describe wtf this app does.
+provide link of the monilith repo
 
-This codebase was created to demonstrate a fully fledged fullstack application built with Kotlin + Spring including CRUD operations, authentication, routing, pagination, and more.
 
-We've gone to great lengths to adhere to the Kotlin + Spring community styleguides & best practices.
+ 
 
-For more information on how to this works with other frontends/backends, head over to the [RealWorld](https://github.com/gothinkster/realworld) repo.
+# Monolith to micro-service 
 
-# How it works
+### list of micro services which are going to be implemented
 
-The application uses Spring (Web, Data, AOP, Cache) and the Kotlin language.
+1- user management (jwt)
+2-
+3-
+4-
 
-    + client/
-        Some feign clients for testing
-    + exception/
-        Exceptions by the application
-    + jwt/
-        AOP advice that check for authentication using a defined @ApiKeySecured operation
-    + model/
-        + inout/
-            Object for REST in/out operations
-        JPA models
-    + repository/
-        + specification/
-            Some specifications for JPA
-        Spring repositories
-    + service/
-        Spring services
-    + web/
-        Spring controllers
-    - ApiApplication.kt <- The main class
+### reasons why each micro service is chosen 
 
-# Security
+### write the files which are going to be used by each micro service
 
-Instead of using Spring Security to implement an authenticator using JWT, I created a simple AOP advice that checks
-the `Authorization` header and put the user to be found in a `ThreadLocal` (see `UserService`).
+### diagram of entities and their relations and dependencies to other services as the data bases are apart
 
-The secret key and jwt issuer are stored in `application.properties`.
+### diagram of services and all the internal and external calls
 
-# Database
+### specify all internal calls like this :
 
-It uses a H2 in memory database (for now), can be changed easily in the `application.properties` for any other database.
-You'll need to add the correct maven dependency for the needed `Driver` in `pom.xml`.
+    attendance-service --> course-service:
+	    where: monolith/courses/models.py, class: Course
+	    happened: monolith/attendance/views.py, class: AttendanceView
+	    code: Courses.objects.get(id=course_id)
+	    reason: imported and used
+	    solution: GRPC 
 
-# Getting started
+    course-service --> user-management-service:
+        where: monolith/users/models.py, class: User
+        happened: monolith/courses/views.py, class: CourseView
+        code: Users.objects.get(id=student_id)
+        reason: must obtain user from database
+        solution: trust user_id from jwt token
+	
+### list of frameworks used
 
-You need Java and maven installed.
+### data base schema and each entity info
 
-    mvn spring-boot:run
-    open http://localhost:8080
 
-# Help
 
-Please fork and PR to improve the code.
 
-# Kotlin
+ 
 
-I've been using Kotlin for some time, but I'm no expert, so feel free to contribute and modify the code to make it more idiomatic!
+### team plan for developing each service
+write wtf each one of us should do
