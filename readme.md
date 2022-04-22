@@ -69,13 +69,21 @@ user: UserHandler.kt, ProfileHandler.kt, UserRepository.kt, User.kt
 	
 ### list of frameworks used
 -kotlin
+
 -springframework
+
 -jbcrypt
+
 -jsonwebtoken
+
 -h2
+
 -feign-gson
+
 -slugify
+
 -junit
+
 
 ### data base schema and each entity info
 
@@ -86,4 +94,6 @@ user: UserHandler.kt, ProfileHandler.kt, UserRepository.kt, User.kt
  
 
 ### team plan for developing each service
-write wtf each one of us should do
+## UserService -> @sadeghAbedi
+## CommentService -> @soroush.baghernezhad
+## ArticleService -> @Alireza.dehghan
