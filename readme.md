@@ -40,8 +40,11 @@ user: UserHandler.kt, ProfileHandler.kt, UserRepository.kt, User.kt
 
 
 ### diagram of entities and their relations and dependencies to other services as the data bases are apart
+![photo1650656322](https://user-images.githubusercontent.com/45733433/164784145-7d1a2c65-8c8d-4020-ad45-0418f30109b1.jpeg)
 
 ### diagram of services and all the internal and external calls
+![photo1650656350](https://user-images.githubusercontent.com/45733433/164784122-bf8718a1-2adf-41e6-a08f-e999385235fb.jpeg)
+
 
 ### specify all internal calls like this :
 
